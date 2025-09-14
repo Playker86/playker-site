@@ -65,7 +65,10 @@
   </nav>
 
   <!-- Каталог игр (по умолчанию) -->
-  <div id="catalog" class="section active"><h2>Каталог игр</h2>
+  <div id="catalog" class="section active">
+<h2>Каталог игр</h2>
+<input type="text" id="gameSearch" placeholder="🔍 Поиск по играм..." style="width:100%;padding:10px;margin:10px 0 20px;border-radius:8px;border:1px solid #444;background:#1a1a1a;color:#fff;">
+
 <div class="catalog">
 <div class="grid">
 <div class="card" data-title="a plague tale bundle ps4/ps5">
@@ -1886,19 +1889,35 @@
     </div>
   </div>
 
-  <script>
-    function openSection(id, btn) {
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  
+
+<script>
+function openSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function openTab(id, btn) {
+  document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// Search function
+document.getElementById('gameSearch').addEventListener('input', function(){
+  let filter = this.value.toLowerCase();
+  document.querySelectorAll('.game-card, .card').forEach(card => {
+    let text = card.innerText.toLowerCase();
+    if(text.includes(filter)) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
     }
-    function openTab(id, btn) {
-      document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
-  </script>
+  });
+});
+</script>
+
 </body>
 </html>
