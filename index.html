@@ -153,16 +153,16 @@ body::before, body::after {
 </div>
   <header>🎮 Playbox 🎮</header>
   <nav>
-    <button class="nav-btn active" onclick="openSection('catalog', this)">Каталог игр</button>
+    <button class="nav-btn active" onclick="openSection('catalog', this)">Скидки</button>
     <button class="nav-btn" onclick="openSection('preorders', this)">Предзаказы</button>
     <button class="nav-btn" onclick="openSection('subs', this)">Подписки</button>
     <button class="nav-btn" onclick="openSection('novelties', this)">Новинки</button>
     <button class="nav-btn" onclick="openSection('contact', this)">Связь с продавцом</button>
   </nav>
 
-  <!-- Каталог игр (по умолчанию) -->
+  <!-- Скидки (по умолчанию) -->
   <div id="catalog" class="section active">
-<h2>Каталог игр</h2>
+<h2>Скидки</h2>
 <input type="text" id="gameSearch" placeholder="🔍 Поиск по играм..." style="width:100%;padding:10px;margin:10px 0 20px;border-radius:8px;border:1px solid #444;background:#1a1a1a;color:#fff;">
 <style>#gameSearch{position:sticky;top:10px;z-index:10;}</style>
 
@@ -1855,6 +1855,10 @@ body::before, body::after {
   
   <!-- Предзаказы -->
   <div id="preorders" class="section">
+<h2>Предзаказы</h2>
+<input type="text" id="preorderSearch" placeholder="🔍 Поиск по играм..." style="width:100%;padding:10px;margin:10px 0 20px;border-radius:8px;border:1px solid #444;background:#1a1a1a;color:#fff;">
+<style>#preorderSearch{position:sticky;top:10px;z-index:10;}</style>
+">
     <h2>Предзаказы</h2>
     <p>Здесь будут отображаться игры, доступные для предзаказа.</p>
     <div class="catalog">
@@ -2320,6 +2324,10 @@ body::before, body::after {
   
   <!-- Новинки -->
   <div id="novelties" class="section">
+<h2>Новинки</h2>
+<input type="text" id="noveltiesSearch" placeholder="🔍 Поиск по играм..." style="width:100%;padding:10px;margin:10px 0 20px;border-radius:8px;border:1px solid #444;background:#1a1a1a;color:#fff;">
+<style>#noveltiesSearch{position:sticky;top:10px;z-index:10;}</style>
+">
     <h2>Новинки</h2>
     <div class="catalog">
       <div class="grid">
@@ -2574,5 +2582,28 @@ document.getElementById("scrollTopBtn").addEventListener("click", function(){
   window.scrollTo({top:0, behavior:'smooth'});
 });
 </script>
+
+<script>
+function setupSearch(inputId, sectionId) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+  input.addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    const cards = section.querySelectorAll('.card');
+    cards.forEach(card => {
+      const title = card.querySelector('.title').innerText.toLowerCase();
+      card.style.display = title.includes(query) ? 'block' : 'none';
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded', function() {
+  setupSearch('gameSearch', 'catalog');
+  setupSearch('preorderSearch', 'preorders');
+  setupSearch('noveltiesSearch', 'novelties');
+});
+</script>
+
 </body>
 </html>
