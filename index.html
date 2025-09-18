@@ -83,6 +83,20 @@ body::before, body::after {
 }
 .section, header, nav { position: relative; z-index: 1; }
 
+
+/* --- Unified clean styles --- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
+.card{background:#132238;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.25);}
+.card .cover{width:100%;height:auto;display:block;}
+.card .card-body{padding:12px 12px 14px;}
+.card .title{font-weight:700;font-size:15px;line-height:1.25;margin-bottom:8px;min-height:38px;}
+.prices{font-size:14px;line-height:1.45;}
+.price-row{margin:4px 0;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.flag{height:14px;width:auto;vertical-align:middle;margin-right:6px;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.15);}
+.price-old{color:#ff5a5a;text-decoration:line-through;}
+.price-new{color:#28d17c;font-weight:700;}
+.discount-note{margin-top:6px;display:block;opacity:.9;}
+
 </style>
 <style>
 /* === Catalog styles === */
@@ -153,10 +167,10 @@ body::before, body::after {
 </div>
   <header>🎮 Playbox 🎮</header>
   <nav>
-    <button class="nav-btn active" onclick="openSection('catalog', this)">Скидки</button>
-    <button class="nav-btn" onclick="openSection('preorders', this)">Предзаказы</button>
+    <button class="nav-btn active" onclick="openSection('catalog', this)">Скидки</button><button class="nav-btn" onclick="openSection('preorders', this)">Предзаказы</button><button class="nav-btn" onclick="openSection('novelties', this)">Новинки</button>
+    
     <button class="nav-btn" onclick="openSection('subs', this)">Подписки</button>
-    <button class="nav-btn" onclick="openSection('novelties', this)">Новинки</button>
+    
     <button class="nav-btn" onclick="openSection('contact', this)">Связь с продавцом</button>
   </nav>
 
@@ -1854,350 +1868,464 @@ body::before, body::after {
   <!-- Подписки -->
   
   <!-- Предзаказы -->
-  <div id="preorders" class="section">
-<h2>Предзаказы</h2>
-<input type="text" id="preorderSearch" placeholder="🔍 Поиск по играм..." style="width:100%;padding:10px;margin:10px 0 20px;border-radius:8px;border:1px solid #444;background:#1a1a1a;color:#fff;">
-<style>#preorderSearch{position:sticky;top:10px;z-index:10;}</style>
-">
-    <h2>Предзаказы</h2>
-    <p>Здесь будут отображаться игры, доступные для предзаказа.</p>
-    <div class="catalog">
-      <div class="grid">
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/1808/63aa8266bc9987ecc84b1d5c94d8170e811021860fcd27f5.png?w=240&thumb=false" alt="Dying Light: The Beast PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Dying Light: The Beast PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 5600 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 7800 ₽</div><div class="price-row"><strong>Релиз:</strong> 18/09/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/1612/ff22a2013738a5d0c652fc200238f9b323a382bdbf960de2.png?w=240&thumb=false" alt="Dying Light: The Beast Deluxe Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Dying Light: The Beast Deluxe Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 6600 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 9000 ₽</div><div class="price-row"><strong>Релиз:</strong> 18/09/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/1617/2e757ffb0a6bb4b91af84db64e0183d725e56e5354f45eba.png?w=240&thumb=false" alt="FC™ 26 Standard Edition PS4 & PS5" class="cover">
-        <div class="card-body">
-          <div class="title">FC™ 26 Standard Edition PS4 & PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 6300 ₽ - Рус (Озвучка)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 7800 ₽ - Рус (Озвучка)</div><div class="price-row"><strong>Релиз:</strong> 25/09/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/1617/545c2ee83dd7df16ebf1cdd6bcb039016658974439401189.png?w=240&thumb=false" alt="FC™ 26 Ultimate Edition PS4 & PS5" class="cover">
-        <div class="card-body">
-          <div class="title">FC™ 26 Ultimate Edition PS4 & PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 8500 ₽ - Рус (Озвучка)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 10500 ₽ - Рус (Озвучка)</div><div class="price-row"><strong>Релиз:</strong> 18/09/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/0704/e81b1e0b80b2001d8a5070c5c465cbc7246e02d1da39fe76.png?w=240&thumb=false" alt="SILENT HILL f Standart Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">SILENT HILL f Standart Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 6000 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 9300 ₽</div><div class="price-row"><strong>Релиз:</strong> 24/09/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/0614/a01c437341a76a26b82895aa2028f53bafe73a787383ca63.png?w=240&thumb=false" alt="SILENT HILL f - Deluxe Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">SILENT HILL f - Deluxe Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 6600 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 10300 ₽</div><div class="price-row"><strong>Релиз:</strong> 24/09/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202412/1216/b7e9dd9e76a34cf50be47c5ae939475c58d86a4ecb414c9f.png?w=240&thumb=false" alt="Agatha Christie - Death on the Nile PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Agatha Christie - Death on the Nile PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 3800 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 5300 ₽</div><div class="price-row"><strong>Релиз:</strong> 24/09/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/0600/a26b8088b4213fcfafdf3f435350b91c12a0efca1621016f.png?w=240&thumb=false" alt="Alien: Rogue Incursion Evolved Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Alien: Rogue Incursion Evolved Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 2900 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 3700 ₽</div><div class="price-row"><strong>Релиз:</strong> 30/09/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/0600/0c3b212de2960dd98a3174d8d91e5a7edda05db348e34a57.png?w=240&thumb=false" alt="Alien: Rogue Incursion Evolved Edition Deluxe PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Alien: Rogue Incursion Evolved Edition Deluxe PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 3700 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 4700 ₽</div><div class="price-row"><strong>Релиз:</strong> 30/09/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/0821/ade7404425c20a8c9dfddb1f6fec66f3fa1596046a450efa.png?w=240&thumb=false" alt="LEGO® Party! PS5" class="cover">
-        <div class="card-body">
-          <div class="title">LEGO® Party! PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 4300 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 5300 ₽</div><div class="price-row"><strong>Релиз:</strong> 30/09/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202504/2116/050bb77f895515e0b0e906b0b9d75b6174b37eece097b462.png?w=240&thumb=false" alt="Ghost of Yōtei™ PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Ghost of Yōtei™ PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 6200 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 9300 ₽</div><div class="price-row"><strong>Релиз:</strong> 01/10/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202504/2116/d0afe358ec7a75f2f37a34194ccea4bf2d1a77029d6c8ff9.png?w=240&thumb=false" alt="Ghost of Yōtei™ Digital Deluxe Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Ghost of Yōtei™ Digital Deluxe Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 6700 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 10300 ₽</div><div class="price-row"><strong>Релиз:</strong> 01/10/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/1512/2847939df260cbe4fd68ff4c36af6813da3590e0bef55ce6.png?w=240&thumb=false" alt="Little Nightmares III PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Little Nightmares III PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 3800 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 5300 ₽</div><div class="price-row"><strong>Релиз:</strong> 09/10/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/1516/3c97d7f9f842c0ea8d782287a111e99b8f9bc69c96b4998f.png?w=240&thumb=false" alt="Little Nightmares III Deluxe Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Little Nightmares III Deluxe Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 5200 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 7200 ₽</div><div class="price-row"><strong>Релиз:</strong> 09/10/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/2514/606363ddf40fc2a7ec23f78f5310de1d41008d316dc2c98d.png?w=240&thumb=false" alt="Battlefield™ 6 Standard Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Battlefield™ 6 Standard Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 6500 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 8000 ₽</div><div class="price-row"><strong>Релиз:</strong> 10/10/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/2917/3bcfe09c4fbb3890f6c45a5cf9464570e36f2b08770187a2.png?w=240&thumb=false" alt="Battlefield™ 6 Phantom Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Battlefield™ 6 Phantom Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 8500 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 10500 ₽</div><div class="price-row"><strong>Релиз:</strong> 10/10/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/0909/118e41eb35cfb9b2f4c5780c351438a066dd2eaa2c2cfea6.png?w=240&thumb=false" alt="Jurassic World Evolution 3 PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Jurassic World Evolution 3 PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 5200 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 6000 ₽</div><div class="price-row"><strong>Релиз:</strong> 21/10/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202506/1010/382cfc602fd750dd958b4ce7fb4dcd6e14d1925d1ddde744.png?w=240&thumb=false" alt="Jurassic World Evolution 3: Deluxe Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Jurassic World Evolution 3: Deluxe Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 5800 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 7200 ₽</div><div class="price-row"><strong>Релиз:</strong> 21/10/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202501/2115/cadb8f4c0e96d1f406a81cda594e290c86bf283722d04aa5.png?w=240&thumb=false" alt="NINJA GAIDEN 4 PS5" class="cover">
-        <div class="card-body">
-          <div class="title">NINJA GAIDEN 4 PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 6400 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 9700 ₽</div><div class="price-row"><strong>Релиз:</strong> 21/10/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/2909/4dee2f762d9baf2435e9f1fbe026da1b32451e75100ab525.png?w=240&thumb=false" alt="Ninja Gaiden 4 Deluxe Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Ninja Gaiden 4 Deluxe Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 8000 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 10500 ₽</div><div class="price-row"><strong>Релиз:</strong> 21/10/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202503/1911/8935847acc5497e1ae9103b4499f81b89aacb600214a3e51.png?w=240&thumb=false" alt="Painkiller PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Painkiller PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 3800 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 5500 ₽</div><div class="price-row"><strong>Релиз:</strong> 21/10/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/2211/5fcda2c1fd6b980b41775256641c7e20407f9a0dbfed9b75.png?w=240&thumb=false" alt="Painkiller: Deluxe Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Painkiller: Deluxe Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 4500 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 6300 ₽</div><div class="price-row"><strong>Релиз:</strong> 21/10/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202506/0213/4a338e159efd91142aea243466d1318e34cb4c1ac97a894a.png?w=240&thumb=false" alt="Farming Simulator 25: Highlands Fishing Edition PS5 (Дополнение)" class="cover">
-        <div class="card-body">
-          <div class="title">Farming Simulator 25: Highlands Fishing Edition PS5 (Дополнение)</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 5300 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 7300 ₽</div><div class="price-row"><strong>Релиз:</strong> 04/11/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202403/2609/6359da7ac1217a96f29de8ed33de56f2ad1706d32ab3b42d.png?w=240&thumb=false" alt="Bunny Rampage: History of Revenge PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Bunny Rampage: History of Revenge PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 2800 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 3300 ₽</div><div class="price-row"><strong>Релиз:</strong> 05/11/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/1914/0ae0742305ddeb5e4e67ff753b0b1e4bf54985843696d34d.png?w=240&thumb=false" alt="Anno 117: Pax Romana PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Anno 117: Pax Romana PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 5000 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 7200 ₽</div><div class="price-row"><strong>Релиз:</strong> 12/11/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/1912/88cebcef145a558c0ca3eab65049221355830f5684653ce9.png?w=240&thumb=false" alt="Anno 117: Pax Romana Gold Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Anno 117: Pax Romana Gold Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 7200 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 10300 ₽</div><div class="price-row"><strong>Релиз:</strong> 12/11/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/2119/8c163e488e9e46b842889e773a8d6807b52f9d0e00b05652.png?w=240&thumb=false" alt="Call of Duty®: Black Ops 7 - Cross-Gen Bundle PS4/PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Call of Duty®: Black Ops 7 - Cross-Gen Bundle PS4/PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 8700 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 8700 ₽</div><div class="price-row"><strong>Релиз:</strong> 13/11/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/2217/e3da91d8005b0072dd2c5328e6c9d4db0d9ea7e04d89da51.png?w=240&thumb=false" alt="Call of Duty®: Black Ops 7 - Vault Edition PS4/PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Call of Duty®: Black Ops 7 - Vault Edition PS4/PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 11800 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 11800 ₽</div><div class="price-row"><strong>Релиз:</strong> 13/11/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/0210/e510a2c29f916947334a897e304bc565d7f7ee4bc6d61709.png?w=240&thumb=false" alt="S.T.A.L.K.E.R. 2: Heart of Chornobyl PS5" class="cover">
-        <div class="card-body">
-          <div class="title">S.T.A.L.K.E.R. 2: Heart of Chornobyl PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 5200 ₽ - (Субтитры)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 7200 ₽ - (Субтитры)</div><div class="price-row"><strong>Релиз:</strong> 20/11/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/3013/1ee5f8cb51db5d50f857e224759ec5e3871d69c4f867eaf9.png?w=240&thumb=false" alt="S.T.A.L.K.E.R. 2: Heart of Chornobyl — Deluxe Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">S.T.A.L.K.E.R. 2: Heart of Chornobyl — Deluxe Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 6200 ₽ - (Субтитры)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 9300 ₽ - (Субтитры)</div><div class="price-row"><strong>Релиз:</strong> 20/11/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/2208/bf71b4d6468dc2e92de1565a9ff39da949926db6a36bb9b7.png?w=240&thumb=false" alt="S.T.A.L.K.E.R. 2: Heart of Chornobyl — Ultimate Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">S.T.A.L.K.E.R. 2: Heart of Chornobyl — Ultimate Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 7500 ₽ - (Субтитры)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 12800 ₽ - (Субтитры)</div><div class="price-row"><strong>Релиз:</strong> 20/11/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/0311/827ad5a6d678eb91c12d33889ae188e873d667db2cc3695a.png?w=240&thumb=false" alt="Project Motor Racing PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Project Motor Racing PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 5600 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 8300 ₽</div><div class="price-row"><strong>Релиз:</strong> 25/11/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/0312/7f785703f16cbe4b857a28ddf98ca1d213e3efc73c81c9fd.png?w=240&thumb=false" alt="Project Motor Racing: Year 1 Bundle PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Project Motor Racing: Year 1 Bundle PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 7200 ₽</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 11500 ₽</div><div class="price-row"><strong>Релиз:</strong> 25/11/2025</div>
-          </div>
-        </div>
-      </div>
-    
-      </div>
-    </div>
-  </div>
+  
 
-  <div id="subs" class="section">
+  
+<div id="preorders" class="section" style="display:none;">
+  <h2>Предзаказы</h2>
+  <input type="text" class="search" placeholder="Поиск по предзаказам..." onkeyup="searchGames(this, 'preorders')">
+  <div class="grid">
+  
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/1617/2e757ffb0a6bb4b91af84db64e0183d725e56e5354f45eba.png?w=240&thumb=false" alt="FC™ 26 Standard Edition PS4 & PS5" class="cover">
+          <div class="card-body">
+            <div class="title">FC™ 26 Standard Edition PS4 & PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 6300 ₽ - Рус (Озвучка)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 7800 ₽ - Рус (Озвучка)</div><div class="price-row">Релиз - 25/09/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/0704/e81b1e0b80b2001d8a5070c5c465cbc7246e02d1da39fe76.png?w=240&thumb=false" alt="SILENT HILL f Standart Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">SILENT HILL f Standart Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 6000 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 9300 ₽</div><div class="price-row">Релиз - 24/09/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/0614/a01c437341a76a26b82895aa2028f53bafe73a787383ca63.png?w=240&thumb=false" alt="SILENT HILL f - Deluxe Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">SILENT HILL f - Deluxe Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 6600 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 10300 ₽</div><div class="price-row">Релиз - 24/09/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202412/1216/b7e9dd9e76a34cf50be47c5ae939475c58d86a4ecb414c9f.png?w=240&thumb=false" alt="Agatha Christie - Death on the Nile PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Agatha Christie - Death on the Nile PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 3800 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 5300 ₽</div><div class="price-row">Релиз - 24/09/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/0600/a26b8088b4213fcfafdf3f435350b91c12a0efca1621016f.png?w=240&thumb=false" alt="Alien: Rogue Incursion Evolved Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Alien: Rogue Incursion Evolved Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 2900 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 3700 ₽</div><div class="price-row">Релиз - 30/09/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/0600/0c3b212de2960dd98a3174d8d91e5a7edda05db348e34a57.png?w=240&thumb=false" alt="Alien: Rogue Incursion Evolved Edition Deluxe PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Alien: Rogue Incursion Evolved Edition Deluxe PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 3700 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 4700 ₽</div><div class="price-row">Релиз - 30/09/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/0821/ade7404425c20a8c9dfddb1f6fec66f3fa1596046a450efa.png?w=240&thumb=false" alt="LEGO® Party! PS5" class="cover">
+          <div class="card-body">
+            <div class="title">LEGO® Party! PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 4300 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 5300 ₽</div><div class="price-row">Релиз - 30/09/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202504/2116/050bb77f895515e0b0e906b0b9d75b6174b37eece097b462.png?w=240&thumb=false" alt="Ghost of Yōtei™ PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Ghost of Yōtei™ PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 6200 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 9300 ₽</div><div class="price-row">Релиз - 01/10/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202504/2116/d0afe358ec7a75f2f37a34194ccea4bf2d1a77029d6c8ff9.png?w=240&thumb=false" alt="Ghost of Yōtei™ Digital Deluxe Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Ghost of Yōtei™ Digital Deluxe Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 6700 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 10300 ₽</div><div class="price-row">Релиз - 01/10/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/1512/2847939df260cbe4fd68ff4c36af6813da3590e0bef55ce6.png?w=240&thumb=false" alt="Little Nightmares III PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Little Nightmares III PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 3800 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 5300 ₽</div><div class="price-row">Релиз - 09/10/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/1516/3c97d7f9f842c0ea8d782287a111e99b8f9bc69c96b4998f.png?w=240&thumb=false" alt="Little Nightmares III Deluxe Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Little Nightmares III Deluxe Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 5200 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 7200 ₽</div><div class="price-row">Релиз - 09/10/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/2514/606363ddf40fc2a7ec23f78f5310de1d41008d316dc2c98d.png?w=240&thumb=false" alt="Battlefield™ 6 Standard Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Battlefield™ 6 Standard Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 6500 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 8000 ₽</div><div class="price-row">Релиз - 10/10/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/2917/3bcfe09c4fbb3890f6c45a5cf9464570e36f2b08770187a2.png?w=240&thumb=false" alt="Battlefield™ 6 Phantom Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Battlefield™ 6 Phantom Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 8500 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 10500 ₽</div><div class="price-row">Релиз - 10/10/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/0909/118e41eb35cfb9b2f4c5780c351438a066dd2eaa2c2cfea6.png?w=240&thumb=false" alt="Jurassic World Evolution 3 PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Jurassic World Evolution 3 PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 5200 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 6000 ₽</div><div class="price-row">Релиз - 21/10/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202506/1010/382cfc602fd750dd958b4ce7fb4dcd6e14d1925d1ddde744.png?w=240&thumb=false" alt="Jurassic World Evolution 3: Deluxe Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Jurassic World Evolution 3: Deluxe Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 5800 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 7200 ₽</div><div class="price-row">Релиз - 21/10/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202501/2115/cadb8f4c0e96d1f406a81cda594e290c86bf283722d04aa5.png?w=240&thumb=false" alt="NINJA GAIDEN 4 PS5" class="cover">
+          <div class="card-body">
+            <div class="title">NINJA GAIDEN 4 PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 6400 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 9700 ₽</div><div class="price-row">Релиз - 21/10/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/2909/4dee2f762d9baf2435e9f1fbe026da1b32451e75100ab525.png?w=240&thumb=false" alt="Ninja Gaiden 4 Deluxe Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Ninja Gaiden 4 Deluxe Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 8000 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 10500 ₽</div><div class="price-row">Релиз - 21/10/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202503/1911/8935847acc5497e1ae9103b4499f81b89aacb600214a3e51.png?w=240&thumb=false" alt="Painkiller PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Painkiller PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 3800 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 5500 ₽</div><div class="price-row">Релиз - 21/10/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/2211/5fcda2c1fd6b980b41775256641c7e20407f9a0dbfed9b75.png?w=240&thumb=false" alt="Painkiller: Deluxe Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Painkiller: Deluxe Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 4500 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 6300 ₽</div><div class="price-row">Релиз - 21/10/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202506/0213/4a338e159efd91142aea243466d1318e34cb4c1ac97a894a.png?w=240&thumb=false" alt="Farming Simulator 25: Highlands Fishing Edition PS5 (Дополнение)" class="cover">
+          <div class="card-body">
+            <div class="title">Farming Simulator 25: Highlands Fishing Edition PS5 (Дополнение)</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 5300 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 7300 ₽</div><div class="price-row">Релиз - 04/11/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202403/2609/6359da7ac1217a96f29de8ed33de56f2ad1706d32ab3b42d.png?w=240&thumb=false" alt="Bunny Rampage: History of Revenge PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Bunny Rampage: History of Revenge PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 2800 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 3300 ₽</div><div class="price-row">Релиз - 05/11/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/1914/0ae0742305ddeb5e4e67ff753b0b1e4bf54985843696d34d.png?w=240&thumb=false" alt="Anno 117: Pax Romana PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Anno 117: Pax Romana PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 5000 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 7200 ₽</div><div class="price-row">Релиз - 12/11/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/1912/88cebcef145a558c0ca3eab65049221355830f5684653ce9.png?w=240&thumb=false" alt="Anno 117: Pax Romana Gold Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Anno 117: Pax Romana Gold Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 7200 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 10300 ₽</div><div class="price-row">Релиз - 12/11/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/2119/8c163e488e9e46b842889e773a8d6807b52f9d0e00b05652.png?w=240&thumb=false" alt="Call of Duty®: Black Ops 7 - Cross-Gen Bundle PS4/PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Call of Duty®: Black Ops 7 - Cross-Gen Bundle PS4/PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 8700 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 8700 ₽</div><div class="price-row">Релиз - 13/11/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/2217/e3da91d8005b0072dd2c5328e6c9d4db0d9ea7e04d89da51.png?w=240&thumb=false" alt="Call of Duty®: Black Ops 7 - Vault Edition PS4/PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Call of Duty®: Black Ops 7 - Vault Edition PS4/PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 11800 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 11800 ₽</div><div class="price-row">Релиз - 13/11/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/0210/e510a2c29f916947334a897e304bc565d7f7ee4bc6d61709.png?w=240&thumb=false" alt="S.T.A.L.K.E.R. 2: Heart of Chornobyl PS5" class="cover">
+          <div class="card-body">
+            <div class="title">S.T.A.L.K.E.R. 2: Heart of Chornobyl PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 5200 ₽ - (Субтитры)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 7200 ₽ - (Субтитры)</div><div class="price-row">Релиз - 20/11/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/3013/1ee5f8cb51db5d50f857e224759ec5e3871d69c4f867eaf9.png?w=240&thumb=false" alt="S.T.A.L.K.E.R. 2: Heart of Chornobyl — Deluxe Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">S.T.A.L.K.E.R. 2: Heart of Chornobyl — Deluxe Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 6200 ₽ - (Субтитры)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 9300 ₽ - (Субтитры)</div><div class="price-row">Релиз - 20/11/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/2208/bf71b4d6468dc2e92de1565a9ff39da949926db6a36bb9b7.png?w=240&thumb=false" alt="S.T.A.L.K.E.R. 2: Heart of Chornobyl — Ultimate Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">S.T.A.L.K.E.R. 2: Heart of Chornobyl — Ultimate Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 7500 ₽ - (Субтитры)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 12800 ₽ - (Субтитры)</div><div class="price-row">Релиз - 20/11/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/0311/827ad5a6d678eb91c12d33889ae188e873d667db2cc3695a.png?w=240&thumb=false" alt="Project Motor Racing PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Project Motor Racing PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 5600 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 8300 ₽</div><div class="price-row">Релиз - 25/11/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/0312/7f785703f16cbe4b857a28ddf98ca1d213e3efc73c81c9fd.png?w=240&thumb=false" alt="Project Motor Racing: Year 1 Bundle PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Project Motor Racing: Year 1 Bundle PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 7200 ₽</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 11500 ₽</div><div class="price-row">Релиз - 25/11/2025</div></div>
+          </div>
+        </div>
+        
+  </div>
+</div>
+
+<div id="novelties" class="section" style="display:none;">
+  <h2>Новинки</h2>
+  <input type="text" class="search" placeholder="Поиск по новинкам..." onkeyup="searchGames(this, 'novelties')">
+  <div class="grid">
+  
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/1617/545c2ee83dd7df16ebf1cdd6bcb039016658974439401189.png?w=240&thumb=false" alt="FC™ 26 Ultimate Edition PS4 & PS5" class="cover">
+          <div class="card-body">
+            <div class="title">FC™ 26 Ultimate Edition PS4 & PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 8500 ₽ - Рус (Озвучка)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 10500 ₽ - Рус (Озвучка)</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202508/1808/63aa8266bc9987ecc84b1d5c94d8170e811021860fcd27f5.png?w=240&thumb=false" alt="Dying Light: The Beast PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Dying Light: The Beast PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 5600 ₽ - Рус (Субтитры)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 7800 ₽ - Рус (Субтитры)</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/1612/ff22a2013738a5d0c652fc200238f9b323a382bdbf960de2.png?w=240&thumb=false" alt="Dying Light: The Beast Deluxe Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Dying Light: The Beast Deluxe Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 6600 ₽ - Рус (Субтитры)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 9000 ₽ - Рус (Субтитры)</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202412/2018/6d3fddf363563ef352c729c8f5077056ab342fd0a9daae9b.png?w=240&thumb=false" alt="Assassin’s Creed Shadows PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Assassin’s Creed Shadows PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 6300 ₽ - Рус (Субтитры)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 7700 ₽ - Рус (Субтитры)</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202412/1917/af817663663cd4388e5c28215825793098057e9cf7f3f399.png?w=240&thumb=false" alt="Assassin's Creed Shadows Digital Deluxe Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Assassin's Creed Shadows Digital Deluxe Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 7500 ₽ - Рус (Субтитры)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 9400 ₽ - Рус (Субтитры)</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202501/2717/42b3ee6b1b2094212231b0b0a82824f687fc5c4dc9bde31c.png?w=240&thumb=false" alt="Forza Horizon  5 Standard Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Forza Horizon  5 Standard Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 3700 ₽ - Рус (Субтитры)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 4700 ₽ - Рус (Субтитры)</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202502/0323/dd48c217bdc1f833c68a2b02a1df330372f664faa860d762.png?w=240&thumb=false" alt="Forza Horizon 5 Deluxe Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Forza Horizon 5 Deluxe Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - <span class="price-old">4700 ₽</span> / <span class="price-new">3700 ₽</span>- Рус (Субтитры)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - <span class="price-old">5800 ₽</span> / <span class="price-new">4700 ₽</span>- Рус (Субтитры)</div><div class="price-row">Скидка до 25/09/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202502/0323/d808653f2c2453e79433628e31f673ef3976c6771d39228a.png?w=240&thumb=false" alt="Forza Horizon 5 Premium Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Forza Horizon 5 Premium Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 5700 ₽ - Рус (Субтитры)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 7200 ₽ - Рус (Субтитры)</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202501/1405/346673e154a94c7d1dba15de4040b8f148dd3aafda800100.png?w=240&thumb=false" alt="DOOM: The Dark Ages PS5" class="cover">
+          <div class="card-body">
+            <div class="title">DOOM: The Dark Ages PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - <span class="price-old">6500 ₽</span> / <span class="price-new">5300 ₽</span>- Рус (Озвучка)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - <span class="price-old">6500 ₽</span> / <span class="price-new">5500 ₽</span>- Рус (Озвучка)</div><div class="price-row">Скидка до 25/09/2025</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202501/1405/5a9411754439a02d29f43dc71e6a5a953a087111c863d381.png?w=240&thumb=false" alt="DOOM: The Dark Ages Premium Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">DOOM: The Dark Ages Premium Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 8800 ₽ - Рус (Озвучка)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 8800 ₽ - Рус (Озвучка)</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/1521/44c15449fbe9485987e27e2fa2c86008a7b4a89d9ab7e0a8.png?w=240&thumb=false" alt="F1 25 PS5" class="cover">
+          <div class="card-body">
+            <div class="title">F1 25 PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 6500 ₽ - ENG</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 7800 ₽ - ENG</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/0312/3ffd7b22eeeb583724e771e2fe604297fe66df62a2ec98b2.png?w=240&thumb=false" alt="F1® 25 Iconic Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">F1® 25 Iconic Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 7800 ₽ - ENG</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 9700 ₽ - ENG</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202504/2416/06f677b905f8794395b855a0de3e9fcb42b567e78c50aaed.png?w=240&thumb=false" alt="Mafia the Old Country PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Mafia the Old Country PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 5500 ₽ - Рус (Озвучка)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 5700 ₽ - Рус (Озвучка)</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202504/2415/784e0f406f3a99e1084deab77d0fa26cc497b80e57d71ec3.png?w=240&thumb=false" alt="Mafia: The Old Country Deluxe Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Mafia: The Old Country Deluxe Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 6600 ₽ - Рус (Озвучка)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 6600 ₽ - Рус (Озвучка)</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202502/2711/cbc6c3135660ec68eacc766959a766b36d7ce3fa6010ca88.png?w=240&thumb=false" alt="DEATH STRANDING 2: ON THE BEACH PS5" class="cover">
+          <div class="card-body">
+            <div class="title">DEATH STRANDING 2: ON THE BEACH PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 6000 ₽ - Рус (Озвучка)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 9300 ₽ - Рус (Озвучка)</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202503/0316/45a0dd4b9682d43459606d901be075e645621f5ef52be212.png?w=240&thumb=false" alt="EATH STRANDING 2: ON THE BEACH Digital Deluxe Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">EATH STRANDING 2: ON THE BEACH Digital Deluxe Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 6500 ₽ - Рус (Озвучка)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 10300 ₽ - Рус (Озвучка)</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202506/0210/7c5546b3439d6f2a871b6d1e957b1718fe629bb5b064b8da.png?w=240&thumb=false" alt="Borderlands 4 PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Borderlands 4 PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 7700 ₽ - Рус (Субтитры)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 7800 ₽ - Рус (Субтитры)</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202506/0210/58def2deba1965336426b7de4181cf2f0ce1b10d327159c7.png?w=240&thumb=false" alt="Borderlands 4 Deluxe Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Borderlands 4 Deluxe Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 10500 ₽ - Рус (Субтитры)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 9700 ₽ - Рус (Субтитры)</div></div>
+          </div>
+        </div>
+        
+
+        <div class="card">
+          <img src="https://image.api.playstation.com/vulcan/ap/rnd/202506/0210/f6d5bad2e5f3ac0e4955c13922699c918917d271fada7fbb.png?w=240&thumb=false" alt="Borderlands 4 Super Deluxe Edition PS5" class="cover">
+          <div class="card-body">
+            <div class="title">Borderlands 4 Super Deluxe Edition PS5</div>
+            <div class="prices"><div class="price-row"><img src="https://flagcdn.com/w20/ua.png" alt="UA" class="flag"> Украина - 14000 ₽ - Рус (Субтитры)</div><div class="price-row"><img src="https://flagcdn.com/w20/tr.png" alt="TR" class="flag"> Турция  - 12500 ₽ - Рус (Субтитры)</div></div>
+          </div>
+        </div>
+        
+  </div>
+</div>
+<div id="subs" class="section">
     <h2>Подписки PlayStation</h2>
     <div class="tabs">
       <button class="tab-btn active" onclick="openTab('ua', this)">🇺🇦 Украина</button>
@@ -2323,186 +2451,7 @@ body::before, body::after {
   <!-- Связь с продавцом -->
   
   <!-- Новинки -->
-  <div id="novelties" class="section">
-<h2>Новинки</h2>
-<input type="text" id="noveltiesSearch" placeholder="🔍 Поиск по играм..." style="width:100%;padding:10px;margin:10px 0 20px;border-radius:8px;border:1px solid #444;background:#1a1a1a;color:#fff;">
-<style>#noveltiesSearch{position:sticky;top:10px;z-index:10;}</style>
-">
-    <h2>Новинки</h2>
-    <div class="catalog">
-      <div class="grid">
-        
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202412/2018/6d3fddf363563ef352c729c8f5077056ab342fd0a9daae9b.png?w=240&thumb=false" alt="Assassin’s Creed Shadows PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Assassin’s Creed Shadows PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 6300 ₽ - Рус (Субтитры)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 7700 ₽ - Рус (Субтитры)</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202412/1917/af817663663cd4388e5c28215825793098057e9cf7f3f399.png?w=240&thumb=false" alt="Assassin's Creed Shadows Digital Deluxe Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Assassin's Creed Shadows Digital Deluxe Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 7500 ₽ - Рус (Субтитры)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 9400 ₽ - Рус (Субтитры)</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202501/2717/42b3ee6b1b2094212231b0b0a82824f687fc5c4dc9bde31c.png?w=240&thumb=false" alt="Forza Horizon  5 Standard Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Forza Horizon  5 Standard Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 3700 ₽ - Рус (Субтитры)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 4700 ₽ - Рус (Субтитры)</div>
-          </div>
-        </div>
-      </div>
-    
-      
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202502/0323/dd48c217bdc1f833c68a2b02a1df330372f664faa860d762.png?w=240&thumb=false" alt="Forza Horizon 5 Deluxe Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Forza Horizon 5 Deluxe Edition PS5</div>
-          <div class="prices">
-            <div class="price-row"><span class="flag">🇺🇦</span> Украина — <span style="text-decoration:line-through;color:#ff4c4c;">4700 ₽</span> / <span style="color:#4caf50;font-weight:bold;">3700 ₽</span> — Рус (Субтитры)</div>
-            <div class="price-row"><span class="flag">🇹🇷</span> Турция — <span style="text-decoration:line-through;color:#ff4c4c;">5800 ₽</span> / <span style="color:#4caf50;font-weight:bold;">4700 ₽</span> — Рус (Субтитры)</div>
-            <div class="price-row"><strong>Скидка до 25/09/2025</strong></div>
-          </div>
-        </div>
-      </div>
-    
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202502/0323/d808653f2c2453e79433628e31f673ef3976c6771d39228a.png?w=240&thumb=false" alt="Forza Horizon 5 Premium Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Forza Horizon 5 Premium Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 5700 ₽ - Рус (Субтитры)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 7200 ₽ - Рус (Субтитры)</div>
-          </div>
-        </div>
-      </div>
-    
-      
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202501/1405/346673e154a94c7d1dba15de4040b8f148dd3aafda800100.png?w=240&thumb=false" alt="DOOM: The Dark Ages PS5" class="cover">
-        <div class="card-body">
-          <div class="title">DOOM: The Dark Ages PS5</div>
-          <div class="prices">
-            <div class="price-row"><span class="flag">🇺🇦</span> Украина — <span style="text-decoration:line-through;color:#ff4c4c;">6500 ₽</span> / <span style="color:#4caf50;font-weight:bold;">5300 ₽</span> — Рус (Озвучка)</div>
-            <div class="price-row"><span class="flag">🇹🇷</span> Турция — <span style="text-decoration:line-through;color:#ff4c4c;">6500 ₽</span> / <span style="color:#4caf50;font-weight:bold;">5500 ₽</span> — Рус (Озвучка)</div>
-            <div class="price-row"><strong>Скидка до 25/09/2025</strong></div>
-          </div>
-        </div>
-      </div>
-    
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202501/1405/5a9411754439a02d29f43dc71e6a5a953a087111c863d381.png?w=240&thumb=false" alt="DOOM: The Dark Ages Premium Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">DOOM: The Dark Ages Premium Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 8800 ₽ - Рус (Озвучка)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 8800 ₽ - Рус (Озвучка)</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202505/1521/44c15449fbe9485987e27e2fa2c86008a7b4a89d9ab7e0a8.png?w=240&thumb=false" alt="F1 25 PS5" class="cover">
-        <div class="card-body">
-          <div class="title">F1 25 PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 6500 ₽ - ENG</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 7800 ₽ - ENG</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/0312/3ffd7b22eeeb583724e771e2fe604297fe66df62a2ec98b2.png?w=240&thumb=false" alt="F1® 25 Iconic Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">F1® 25 Iconic Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 7800 ₽ - ENG</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 9700 ₽ - ENG</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202504/2416/06f677b905f8794395b855a0de3e9fcb42b567e78c50aaed.png?w=240&thumb=false" alt="Mafia the Old Country PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Mafia the Old Country PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 5500 ₽ - Рус (Озвучка)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 5700 ₽ - Рус (Озвучка)</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202504/2415/784e0f406f3a99e1084deab77d0fa26cc497b80e57d71ec3.png?w=240&thumb=false" alt="Mafia: The Old Country Deluxe Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Mafia: The Old Country Deluxe Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 6600 ₽ - Рус (Озвучка)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 6600 ₽ - Рус (Озвучка)</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202502/2711/cbc6c3135660ec68eacc766959a766b36d7ce3fa6010ca88.png?w=240&thumb=false" alt="DEATH STRANDING 2: ON THE BEACH PS5" class="cover">
-        <div class="card-body">
-          <div class="title">DEATH STRANDING 2: ON THE BEACH PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 6000 ₽ - Рус (Озвучка)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 9300 ₽ - Рус (Озвучка)</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202503/0316/45a0dd4b9682d43459606d901be075e645621f5ef52be212.png?w=240&thumb=false" alt="EATH STRANDING 2: ON THE BEACH Digital Deluxe Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">EATH STRANDING 2: ON THE BEACH Digital Deluxe Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 6500 ₽ - Рус (Озвучка)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 10300 ₽ - Рус (Озвучка)</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202506/0210/7c5546b3439d6f2a871b6d1e957b1718fe629bb5b064b8da.png?w=240&thumb=false" alt="Borderlands 4 PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Borderlands 4 PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 7700 ₽ - Рус (Субтитры)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 7800 ₽ - Рус (Субтитры)</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202506/0210/58def2deba1965336426b7de4181cf2f0ce1b10d327159c7.png?w=240&thumb=false" alt="Borderlands 4 Deluxe Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Borderlands 4 Deluxe Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 10500 ₽ - Рус (Субтитры)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 9700 ₽ - Рус (Субтитры)</div>
-          </div>
-        </div>
-      </div>
-    
-      <div class="card">
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202506/0210/f6d5bad2e5f3ac0e4955c13922699c918917d271fada7fbb.png?w=240&thumb=false" alt="Borderlands 4 Super Deluxe Edition PS5" class="cover">
-        <div class="card-body">
-          <div class="title">Borderlands 4 Super Deluxe Edition PS5</div>
-          <div class="prices">
-    <div class="price-row"><span class="flag">🇺🇦</span> Украина - 14000 ₽ - Рус (Субтитры)</div><div class="price-row"><span class="flag">🇹🇷</span> Турция  - 12500 ₽ - Рус (Субтитры)</div>
-          </div>
-        </div>
-      </div>
-    
-      </div>
-    </div>
-  </div>
+  
 
   <div id="contact" class="section">
     <h2>Связь с продавцом</h2>
@@ -2603,6 +2552,49 @@ document.addEventListener('DOMContentLoaded', function() {
   setupSearch('preorderSearch', 'preorders');
   setupSearch('noveltiesSearch', 'novelties');
 });
+</script>
+
+
+<button onclick="topFunction()" id="scrollTopBtn">⬆</button>
+<script>
+function openSection(sectionId, btn) {
+  var sections = document.getElementsByClassName("section");
+  for (var i = 0; i < sections.length; i++) {
+    sections[i].style.display = "none";
+  }
+  document.getElementById(sectionId).style.display = "block";
+  var buttons = document.getElementsByClassName("nav-btn");
+  for (var j = 0; j < buttons.length; j++) {
+    buttons[j].classList.remove("active");
+  }
+  btn.classList.add("active");
+}
+function searchGames(input, sectionId) {
+  var filter = input.value.toLowerCase();
+  var section = document.getElementById(sectionId);
+  var cards = section.getElementsByClassName("card");
+  for (var i = 0; i < cards.length; i++) {
+    var title = cards[i].getElementsByClassName("title")[0];
+    if (title.innerText.toLowerCase().indexOf(filter) > -1) {
+      cards[i].style.display = "";
+    } else {
+      cards[i].style.display = "none";
+    }
+  }
+}
+let mybutton = document.getElementById("scrollTopBtn");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 </script>
 
 </body>
