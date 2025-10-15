@@ -4991,5 +4991,23 @@
 <section id="novelties">
 <div class="games-grid"></div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Search for PSVR2 section
+  const psvrSearch = document.querySelector('#psvr2 .search-box.green input');
+  if (psvrSearch) {
+    psvrSearch.addEventListener('input', function() {
+      const query = this.value.trim().toLowerCase();
+      document.querySelectorAll('#psvr2 .card').forEach(card => {
+        const title = card.querySelector('.title')?.textContent.toLowerCase() || '';
+        const data = card.getAttribute('data-title')?.toLowerCase() || '';
+        card.style.display = (title.includes(query) || data.includes(query)) ? '' : 'none';
+      });
+    });
+  }
+});
+</script>
+
 </body>
 </html>
